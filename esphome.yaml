@@ -1,0 +1,347 @@
+esphome:
+  name: esphome-web-4d3a10
+  friendly_name: PV Heizstab
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: 'KEY'
+
+ota:
+
+wifi:
+  ssid: wifi_ssid
+  password: wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: 'Esphome-Web-4D3A10'
+    password: 'esphome'
+
+captive_portal:
+
+# -------------------------------------------------------------------------
+# ------------------CODE-FOR-GETTING-SERIAL-ELWA_DC-DATA-------------------
+# -------------------------------------------------------------------------
+
+logger:
+  baud_rate: 9600
+  logs:
+    component: ERROR
+
+text_sensor:
+  - platform: template
+    id: Token_0
+    name: 'Reply'
+  - platform: template
+    id: Token_1
+    name: 'Elwa DC Firmware'
+
+binary_sensor:
+  - platform: template
+    id: Token_4
+    name: 'DC Trenner'
+
+  - platform: template
+    id: Token_5
+    name: 'DC Relais'
+
+  - platform: template
+    id: Token_6
+    name: 'AC Relais'
+
+  - platform: template
+    id: Token_27
+    name: 'Position Unten'
+
+sensor:
+  - platform: template
+    id: Token_2
+    name: 'Betriebstag'
+    unit_of_measurement: 'd'
+    update_interval: never
+    accuracy_decimals: 0
+
+  - platform: template
+    id: Token_3
+    name: 'Status MPP'
+    update_interval: never
+    accuracy_decimals: 0
+
+  - platform: template
+    id: Token_7
+    name: 'Temperatur'
+    unit_of_measurement: '°C'
+    device_class: 'temperature'
+    state_class: 'measurement'
+    accuracy_decimals: 1
+    update_interval: never
+    filters:
+      - multiply: 0.1
+
+  - platform: template
+    id: Token_8
+    name: 'Temp Min'
+    unit_of_measurement: '°C'
+    device_class: 'temperature'
+    state_class: 'measurement'
+    accuracy_decimals: 1
+    update_interval: never
+    filters:
+      - multiply: 0.1
+
+  - platform: template
+    id: Token_9
+    name: 'Temp Max'
+    unit_of_measurement: '°C'
+    device_class: 'temperature'
+    state_class: 'measurement'
+    accuracy_decimals: 1
+    update_interval: never
+    filters:
+      - multiply: 0.1
+
+  - platform: template
+    id: Token_10
+    name: 'Temp Soll'
+    unit_of_measurement: '°C'
+    device_class: 'temperature'
+    state_class: 'measurement'
+    accuracy_decimals: 1
+    update_interval: never
+    filters:
+      - multiply: 0.1
+
+  - platform: template
+    id: Token_11
+    name: 'Temp Soll Netz'
+    unit_of_measurement: '°C'
+    device_class: 'temperature'
+    state_class: 'measurement'
+    accuracy_decimals: 1
+    update_interval: never
+    filters:
+      - multiply: 0.1
+
+  - platform: template
+    id: Token_12
+    name: 'Temp. Gerät'
+    unit_of_measurement: '°C'
+    update_interval: never
+
+  - platform: template
+    id: Token_13
+    name: 'ISO Messung'
+    update_interval: never
+    accuracy_decimals: 0
+
+  - platform: template
+    id: Token_14
+    name: 'Token_14'
+    update_interval: never
+
+  - platform: template
+    id: Token_15
+    name: 'Spannung'
+    unit_of_measurement: 'V'
+    device_class: 'voltage'
+    state_class: 'measurement'
+    update_interval: never
+    accuracy_decimals: 0
+
+  - platform: template
+    id: Token_16
+    name: 'Strom'
+    unit_of_measurement: 'A'
+    device_class: 'current'
+    state_class: 'measurement'
+    update_interval: never
+    accuracy_decimals: 2
+
+  - platform: template
+    id: Token_17
+    name: 'Leistung Aktuell'
+    unit_of_measurement: 'W'
+    device_class: 'power'
+    state_class: 'measurement'
+    update_interval: never
+
+  - platform: template
+    id: Token_18
+    name: 'Energie Heute'
+    unit_of_measurement: 'kWh'
+    device_class: 'energy'
+    state_class: 'total'
+    update_interval: never
+    accuracy_decimals: 1
+    filters:
+      - multiply: 0.001
+
+  - platform: template
+    id: Token_19
+    name: 'Energie Gesamt'
+    unit_of_measurement: 'kWh'
+    device_class: 'energy'
+    state_class: 'total_increasing'
+    update_interval: never
+    accuracy_decimals: 1
+    filters:
+      - multiply: 0.001
+
+  - platform: template
+    id: Token_20
+    name: 'Netzenergie Heute'
+    update_interval: never
+    accuracy_decimals: 0
+
+  - platform: template
+    id: Token_21
+    name: 'Token_21'
+    update_interval: never
+
+  - platform: template
+    id: Token_22
+    name: 'Token_22'
+    update_interval: never
+
+  - platform: template
+    id: Token_23
+    name: 'Token_23'
+    update_interval: never
+
+  - platform: template
+    id: Token_24
+    name: 'Token_24'
+    update_interval: never
+
+  - platform: template
+    id: Token_25
+    name: 'Laufzeit Heute'
+    unit_of_measurement: 'min'
+    update_interval: never
+    accuracy_decimals: 0
+
+  - platform: template
+    id: Token_26
+    name: 'Netzladung Beginn'
+    update_interval: never
+
+  - platform: template
+    id: Token_28
+    name: 'Seriennummer'
+    update_interval: never
+    accuracy_decimals: 0
+
+  - platform: template
+    id: Token_29
+    name: 'Token_29'
+    update_interval: never
+
+  - platform: template
+    id: Token_30
+    name: 'Token_30'
+    update_interval: never
+
+  # - platform: template
+  #   id: Token_31
+  #   name: "Status"
+  #   update_interval: never
+
+uart:
+  - id: uart_elwa
+    baud_rate: 9600
+    rx_buffer_size: 1024
+    tx_pin: 17
+    rx_pin: 16
+    debug:
+      direction: RX
+      dummy_receiver: true
+      # after:
+      # delimiter: "\r\n"
+      # delimiter: "\t"
+      sequence:
+        - lambda: |-
+            UARTDebug::log_string(direction, bytes);           // Log UART data
+            std::string str(bytes.begin(), bytes.end());       // Convert bytes to string
+
+            // Check if the content of the string is not equal to "rs\r\n"  =>  starts with "ds\r\n"
+            if (str != "rs\r\n") {
+                std::vector<std::string> tokens;               // Vector to store extracted tokens
+                size_t start_index = 0;                        // Index to keep track of the start position while extracting tokens
+
+                // Extract tokens from the string
+                while (start_index < str.size()) {
+                    size_t end_index = start_index;
+                    while (end_index < str.size() && str[end_index] != '\t') {
+                        end_index++;
+                    }
+                    // Push the extracted token into the vector
+                    tokens.push_back(str.substr(start_index, end_index - start_index));
+                    if (end_index < str.size() && str[end_index] == '\t') {
+                        end_index++; // Move past the tab character
+                    }
+                    start_index = end_index;
+                }
+
+                // Log extracted tokens
+                for (size_t i = 0; i < tokens.size(); i++) {
+                    ESP_LOGD("main", "Token %d: %s", i, tokens[i].c_str());
+
+                    // Set the state of the corresponding sensor based on token index
+                    switch (i) {
+                        case 0: id(Token_0).publish_state(tokens[i].c_str()); break;
+                        case 1: id(Token_1).publish_state(tokens[i].c_str()); break;
+                        case 2: id(Token_2).publish_state(atof(tokens[i].c_str())); break;
+                        case 3: id(Token_3).publish_state(atof(tokens[i].c_str())); break;
+                        case 4: id(Token_4).publish_state(atof(tokens[i].c_str())); break;
+                        case 5: id(Token_5).publish_state(atof(tokens[i].c_str())); break;
+                        case 6: id(Token_6).publish_state(atof(tokens[i].c_str())); break;
+                        case 7: id(Token_7).publish_state(atof(tokens[i].c_str())); break;
+                        case 8: id(Token_8).publish_state(atof(tokens[i].c_str())); break;
+                        case 9: id(Token_9).publish_state(atof(tokens[i].c_str())); break;
+                        case 10: id(Token_10).publish_state(atof(tokens[i].c_str())); break;
+                        case 11: id(Token_11).publish_state(atof(tokens[i].c_str())); break;
+                        case 12: id(Token_12).publish_state(atof(tokens[i].c_str())); break;
+                        case 13: id(Token_13).publish_state(atof(tokens[i].c_str())); break;
+                        case 14: id(Token_14).publish_state(atof(tokens[i].c_str())); break;
+                        case 15: id(Token_15).publish_state(atof(tokens[i].c_str())); break;
+                        case 16: id(Token_16).publish_state(atof(tokens[i].c_str())); break;
+                        case 17: id(Token_17).publish_state(atof(tokens[i].c_str())); break;
+                        case 18: id(Token_18).publish_state(atof(tokens[i].c_str())); break;
+                        case 19: id(Token_19).publish_state(atof(tokens[i].c_str())); break;
+                        case 20: id(Token_20).publish_state(atof(tokens[i].c_str())); break;
+                        case 21: id(Token_21).publish_state(atof(tokens[i].c_str())); break;
+                        case 22: id(Token_22).publish_state(atof(tokens[i].c_str())); break;
+                        case 23: id(Token_23).publish_state(atof(tokens[i].c_str())); break;
+                        case 24: id(Token_24).publish_state(atof(tokens[i].c_str())); break;
+                        case 25: id(Token_25).publish_state(atof(tokens[i].c_str())); break;
+                        case 26: id(Token_26).publish_state(atof(tokens[i].c_str())); break;
+                        case 27: id(Token_27).publish_state(atof(tokens[i].c_str())); break;
+                        case 28: id(Token_28).publish_state(atof(tokens[i].c_str())); break;
+                        case 29: id(Token_29).publish_state(atof(tokens[i].c_str())); break;
+                        case 30: id(Token_30).publish_state(atof(tokens[i].c_str())); break;
+                        // case 31: id(Token_31).publish_state(atof(tokens[i].c_str())); break;
+                    }
+                }
+            } else {
+                // Handle the case where the content of str is "rs\r\n"  =>  ElwaDC is off due to drop of PV input voltage below threshold
+                // id(Token_15).publish_state(0);  // set voltage to zero
+                // id(Token_16).publish_state(0);  // set current to zero
+                // id(Token_17).publish_state(0);  // set power to zero
+            }
+
+# ----------------------CODE-TO-REQUEST-ELWA_DC-SERIAL-DATA----------------------
+
+# if you need to send a request periodically to get response from the uart device
+interval:
+  - interval: 20s #interval to request measurements
+    then:
+      # request for getting all relevant token values 'rs'
+      - uart.write: [0x72, 0x73, 0x0D, 0x0A]
+      # "ping" request for getting just an OK
+      # - uart.write:  [0x72, 0x72, 0x71, 0x0D, 0x0A]
