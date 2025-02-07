@@ -1,5 +1,5 @@
 esphome:
-  name: esphome-web-4d3a10
+  name: esphome-web-e45ce4
   friendly_name: PV Heizstab
 
 esp32:
@@ -10,18 +10,19 @@ esp32:
 # Enable Home Assistant API
 api:
   encryption:
-    key: 'KEY'
+    key: !secret api_encryption_key
 
 ota:
+  - platform: esphome
 
 wifi:
-  ssid: wifi_ssid
-  password: wifi_password
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: 'Esphome-Web-4D3A10'
-    password: 'esphome'
+    ssid: 'Esphome-Web-E45CE4'
+    password: 'password'
 
 captive_portal:
 
