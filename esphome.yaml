@@ -1,30 +1,60 @@
+# Core Configuration
+# https://esphome.io/components/esphome.html
 esphome:
   name: esphome-web-e45ce4
   friendly_name: PV Heizstab
 
+# ESP32 Configuration
+# https://esphome.io/components/esp32.html
 esp32:
   board: esp32dev
   framework:
     type: arduino
 
 # Enable Home Assistant API
+# https://esphome.io/components/api.html
 api:
   encryption:
     key: !secret api_encryption_key
 
+# Connect MQTT client to a MQTT broker
+# https://esphome.io/components/mqtt.html#mqtt-component-base-configuration
+mqtt:
+  broker: !secret mqtt_broker
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+  reboot_timeout: 0s
+
+# Enable Over-the-Air Updates
+# https://esphome.io/components/ota/
 ota:
   - platform: esphome
 
+# WiFi Configuration
+# Connect your device to your wifi
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
 
+  # Configure a static IP address (optional)
+  # manual_ip:
+  #   static_ip: 192.168.178.100
+  #   gateway: 192.168.178.1
+  #   subnet: 255.255.255.0
+  #   dns1: 8.8.8.8
+  #   dns2: 8.8.4.4
+
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
     ssid: 'Esphome-Web-E45CE4'
-    password: 'password'
+    password: !secret wifi_ap_password
 
+# Enable a captive portal
 captive_portal:
+
+# Enable a webserver on port 80
+web_server:
+  port: 80
 
 # -------------------------------------------------------------------------
 # ------------------CODE-FOR-GETTING-SERIAL-ELWA_DC-DATA-------------------
