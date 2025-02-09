@@ -2,7 +2,7 @@
 # https://esphome.io/components/esphome.html
 esphome:
   name: esphome-web-e45ce4
-  friendly_name: PV Heizstab
+  friendly_name: MYPV ELWA Heizstab
 
 # ESP32 Configuration
 # https://esphome.io/components/esp32.html
@@ -19,11 +19,11 @@ api:
 
 # Connect MQTT client to a MQTT broker
 # https://esphome.io/components/mqtt.html#mqtt-component-base-configuration
-mqtt:
-  broker: !secret mqtt_broker
-  username: !secret mqtt_username
-  password: !secret mqtt_password
-  reboot_timeout: 0s
+# mqtt:
+#   broker: !secret mqtt_broker
+#   username: !secret mqtt_username
+#   password: !secret mqtt_password
+#   reboot_timeout: 0s
 
 # Enable Over-the-Air Updates
 # https://esphome.io/components/ota/
