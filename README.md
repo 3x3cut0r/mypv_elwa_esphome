@@ -41,7 +41,7 @@ esphome config esphome.yaml
 esphome dashboard .
 ```
 
-7. open the dashboard in a webbrowser: http://0.0.0.0:6052/
+7. open the dashboard in a webbrowser: http://localhost:6052/
 
 8. click on the 3 dots of the ONLINE showing esphome.yaml box -> Install -> Plug into this computer
 
@@ -67,9 +67,13 @@ esphome dashboard .
 
 ## Cabling
 
+![ESP32-DEV-KIT-v4-pinout](ESP32-DEV-KIT-v4-pinout.jpg)
+
+**Note: TX and RX are normally crossed. This was not the case for me. You may have to rotate the two pins to find out what is right.**
+
 | **IR Hichi** | **ESP32**    |
 | ------------ | ------------ |
-| TX           | GPIO 16 (RX) |
-| RX           | GPIO 17 (TX) |
+| TX           | GPIO 17 (TX) |
+| RX           | GPIO 16 (RX) |
 | GND          | GND          |
 | VCC          | 5V           |
