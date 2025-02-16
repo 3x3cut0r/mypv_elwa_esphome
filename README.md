@@ -69,7 +69,7 @@ esphome dashboard .
 
 ![ESP32-DEV-KIT-v4-pinout](ESP32-DEV-KIT-v4-pinout.jpg)
 
-**Note: TX and RX are normally crossed. This was not the case for me. You may have to rotate the two pins to find out what is right.**
+**Note: TX and RX are normally crossed, means that TX from the IR Hichi goes into RX from the ESP32 and vice versa. This was not the case for me. You may have to rotate the two pins to find out what works for you.**
 
 | **IR Hichi** | **ESP32**    |
 | ------------ | ------------ |
