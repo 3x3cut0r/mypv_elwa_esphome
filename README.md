@@ -24,6 +24,7 @@ to connect to home assistant or iobroker you need to generate either an api encr
 
 ```bash
 # generate api encryption key
+# for windows user, use this online tool: https://www.cryptool.org/en/cto/openssl/
 openssl rand -base64 32
 ```
 
