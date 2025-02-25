@@ -23,6 +23,7 @@ api:
 #   broker: !secret mqtt_broker
 #   username: !secret mqtt_username
 #   password: !secret mqtt_password
+#   topic_prefix: heizstab
 
 # Enable Over-the-Air Updates
 # https://esphome.io/components/ota/
