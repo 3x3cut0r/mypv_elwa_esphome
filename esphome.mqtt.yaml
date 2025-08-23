@@ -67,46 +67,46 @@ logger:
 
 text_sensor:
   - platform: template
-    id: Token_0
-    name: 'Reply'
+    id: device_reply
+    name: 'Geräteantwort'
   - platform: template
-    id: Token_1
-    name: 'Elwa DC Firmware'
+    id: firmware_version
+    name: 'Firmware-Version'
 
 binary_sensor:
   - platform: template
-    id: Token_4
-    name: 'DC Trenner'
+    id: dc_disconnect
+    name: 'DC-Trennung'
 
   - platform: template
-    id: Token_5
-    name: 'DC Relais'
+    id: dc_relay
+    name: 'DC-Relais'
 
   - platform: template
-    id: Token_6
-    name: 'AC Relais'
+    id: ac_relay
+    name: 'AC-Relais'
 
   - platform: template
-    id: Token_27
-    name: 'Position Unten'
+    id: lower_position
+    name: 'Untere Position'
 
 sensor:
   - platform: template
-    id: Token_2
-    name: 'Betriebstag'
+    id: operating_days
+    name: 'Betriebstage'
     unit_of_measurement: 'd'
     update_interval: never
     accuracy_decimals: 0
 
   - platform: template
-    id: Token_3
-    name: 'Status MPP'
+    id: mpp_status
+    name: 'MPP-Status'
     update_interval: never
     accuracy_decimals: 0
 
   - platform: template
-    id: Token_7
-    name: 'Temperatur'
+    id: water_temperature
+    name: 'Wassertemperatur'
     unit_of_measurement: '°C'
     device_class: 'temperature'
     state_class: 'measurement'
@@ -116,8 +116,8 @@ sensor:
       - multiply: 0.1
 
   - platform: template
-    id: Token_8
-    name: 'Temp Min'
+    id: temperature_min
+    name: 'Minimale Temperatur'
     unit_of_measurement: '°C'
     device_class: 'temperature'
     state_class: 'measurement'
@@ -127,8 +127,8 @@ sensor:
       - multiply: 0.1
 
   - platform: template
-    id: Token_9
-    name: 'Temp Max'
+    id: temperature_max
+    name: 'Maximale Temperatur'
     unit_of_measurement: '°C'
     device_class: 'temperature'
     state_class: 'measurement'
@@ -138,8 +138,8 @@ sensor:
       - multiply: 0.1
 
   - platform: template
-    id: Token_10
-    name: 'Temp Soll'
+    id: target_temperature_pv
+    name: 'Zieltemperatur PV'
     unit_of_measurement: '°C'
     device_class: 'temperature'
     state_class: 'measurement'
@@ -149,8 +149,8 @@ sensor:
       - multiply: 0.1
 
   - platform: template
-    id: Token_11
-    name: 'Temp Soll Netz'
+    id: target_temperature_grid
+    name: 'Zieltemperatur Netz'
     unit_of_measurement: '°C'
     device_class: 'temperature'
     state_class: 'measurement'
@@ -160,25 +160,25 @@ sensor:
       - multiply: 0.1
 
   - platform: template
-    id: Token_12
-    name: 'Temp. Gerät'
+    id: device_temperature
+    name: 'Gerätetemperatur'
     unit_of_measurement: '°C'
     update_interval: never
 
   - platform: template
-    id: Token_13
-    name: 'ISO Messung'
+    id: insulation_measurement
+    name: 'Isolationsmessung'
     update_interval: never
     accuracy_decimals: 0
 
   - platform: template
-    id: Token_14
-    name: 'Token_14'
+    id: fault_code
+    name: 'Fehlercode'
     update_interval: never
 
   - platform: template
-    id: Token_15
-    name: 'Spannung'
+    id: input_voltage
+    name: 'Eingangsspannung'
     unit_of_measurement: 'V'
     device_class: 'voltage'
     state_class: 'measurement'
@@ -186,8 +186,8 @@ sensor:
     accuracy_decimals: 0
 
   - platform: template
-    id: Token_16
-    name: 'Strom'
+    id: input_current
+    name: 'Eingangsstrom'
     unit_of_measurement: 'A'
     device_class: 'current'
     state_class: 'measurement'
@@ -195,16 +195,16 @@ sensor:
     accuracy_decimals: 2
 
   - platform: template
-    id: Token_17
-    name: 'Leistung Aktuell'
+    id: power_now
+    name: 'Aktuelle Leistung'
     unit_of_measurement: 'W'
     device_class: 'power'
     state_class: 'measurement'
     update_interval: never
 
   - platform: template
-    id: Token_18
-    name: 'Energie Heute'
+    id: energy_today
+    name: 'Energie heute'
     unit_of_measurement: 'kWh'
     device_class: 'energy'
     state_class: 'total'
@@ -214,8 +214,8 @@ sensor:
       - multiply: 0.001
 
   - platform: template
-    id: Token_19
-    name: 'Energie Gesamt'
+    id: energy_total
+    name: 'Gesamtenergie'
     unit_of_measurement: 'kWh'
     device_class: 'energy'
     state_class: 'total_increasing'
@@ -225,57 +225,57 @@ sensor:
       - multiply: 0.001
 
   - platform: template
-    id: Token_20
-    name: 'Netzenergie Heute'
+    id: grid_energy_today
+    name: 'Netzenergie heute'
     update_interval: never
     accuracy_decimals: 0
 
   - platform: template
-    id: Token_21
-    name: 'Token_21'
+    id: grid_energy_total
+    name: 'Netzenergie gesamt'
     update_interval: never
 
   - platform: template
-    id: Token_22
-    name: 'Token_22'
+    id: unknown_22
+    name: 'Unbekannt 22'
     update_interval: never
 
   - platform: template
-    id: Token_23
-    name: 'Token_23'
+    id: unknown_23
+    name: 'Unbekannt 23'
     update_interval: never
 
   - platform: template
-    id: Token_24
-    name: 'Token_24'
+    id: unknown_24
+    name: 'Unbekannt 24'
     update_interval: never
 
   - platform: template
-    id: Token_25
-    name: 'Laufzeit Heute'
+    id: runtime_today
+    name: 'Laufzeit heute'
     unit_of_measurement: 'min'
     update_interval: never
     accuracy_decimals: 0
 
   - platform: template
-    id: Token_26
-    name: 'Netzladung Beginn'
+    id: grid_charge_start
+    name: 'Netzladestart'
     update_interval: never
 
   - platform: template
-    id: Token_28
+    id: serial_number
     name: 'Seriennummer'
     update_interval: never
     accuracy_decimals: 0
 
   - platform: template
-    id: Token_29
-    name: 'Token_29'
+    id: unknown_29
+    name: 'Unbekannt 29'
     update_interval: never
 
   - platform: template
-    id: Token_30
-    name: 'Token_30'
+    id: unknown_30
+    name: 'Unbekannt 30'
     update_interval: never
 
   # - platform: template
@@ -325,37 +325,37 @@ uart:
 
                     // Set the state of the corresponding sensor based on token index
                     switch (i) {
-                        case 0: id(Token_0).publish_state(tokens[i].c_str()); break;
-                        case 1: id(Token_1).publish_state(tokens[i].c_str()); break;
-                        case 2: id(Token_2).publish_state(atof(tokens[i].c_str())); break;
-                        case 3: id(Token_3).publish_state(atof(tokens[i].c_str())); break;
-                        case 4: id(Token_4).publish_state(atof(tokens[i].c_str())); break;
-                        case 5: id(Token_5).publish_state(atof(tokens[i].c_str())); break;
-                        case 6: id(Token_6).publish_state(atof(tokens[i].c_str())); break;
-                        case 7: id(Token_7).publish_state(atof(tokens[i].c_str())); break;
-                        case 8: id(Token_8).publish_state(atof(tokens[i].c_str())); break;
-                        case 9: id(Token_9).publish_state(atof(tokens[i].c_str())); break;
-                        case 10: id(Token_10).publish_state(atof(tokens[i].c_str())); break;
-                        case 11: id(Token_11).publish_state(atof(tokens[i].c_str())); break;
-                        case 12: id(Token_12).publish_state(atof(tokens[i].c_str())); break;
-                        case 13: id(Token_13).publish_state(atof(tokens[i].c_str())); break;
-                        case 14: id(Token_14).publish_state(atof(tokens[i].c_str())); break;
-                        case 15: id(Token_15).publish_state(atof(tokens[i].c_str())); break;
-                        case 16: id(Token_16).publish_state(atof(tokens[i].c_str())); break;
-                        case 17: id(Token_17).publish_state(atof(tokens[i].c_str())); break;
-                        case 18: id(Token_18).publish_state(atof(tokens[i].c_str())); break;
-                        case 19: id(Token_19).publish_state(atof(tokens[i].c_str())); break;
-                        case 20: id(Token_20).publish_state(atof(tokens[i].c_str())); break;
-                        case 21: id(Token_21).publish_state(atof(tokens[i].c_str())); break;
-                        case 22: id(Token_22).publish_state(atof(tokens[i].c_str())); break;
-                        case 23: id(Token_23).publish_state(atof(tokens[i].c_str())); break;
-                        case 24: id(Token_24).publish_state(atof(tokens[i].c_str())); break;
-                        case 25: id(Token_25).publish_state(atof(tokens[i].c_str())); break;
-                        case 26: id(Token_26).publish_state(atof(tokens[i].c_str())); break;
-                        case 27: id(Token_27).publish_state(atof(tokens[i].c_str())); break;
-                        case 28: id(Token_28).publish_state(atof(tokens[i].c_str())); break;
-                        case 29: id(Token_29).publish_state(atof(tokens[i].c_str())); break;
-                        case 30: id(Token_30).publish_state(atof(tokens[i].c_str())); break;
+                        case 0: id(device_reply).publish_state(tokens[i].c_str()); break;
+                        case 1: id(firmware_version).publish_state(tokens[i].c_str()); break;
+                        case 2: id(operating_days).publish_state(atof(tokens[i].c_str())); break;
+                        case 3: id(mpp_status).publish_state(atof(tokens[i].c_str())); break;
+                        case 4: id(dc_disconnect).publish_state(atof(tokens[i].c_str())); break;
+                        case 5: id(dc_relay).publish_state(atof(tokens[i].c_str())); break;
+                        case 6: id(ac_relay).publish_state(atof(tokens[i].c_str())); break;
+                        case 7: id(water_temperature).publish_state(atof(tokens[i].c_str())); break;
+                        case 8: id(temperature_min).publish_state(atof(tokens[i].c_str())); break;
+                        case 9: id(temperature_max).publish_state(atof(tokens[i].c_str())); break;
+                        case 10: id(target_temperature_pv).publish_state(atof(tokens[i].c_str())); break;
+                        case 11: id(target_temperature_grid).publish_state(atof(tokens[i].c_str())); break;
+                        case 12: id(device_temperature).publish_state(atof(tokens[i].c_str())); break;
+                        case 13: id(insulation_measurement).publish_state(atof(tokens[i].c_str())); break;
+                        case 14: id(fault_code).publish_state(atof(tokens[i].c_str())); break;
+                        case 15: id(input_voltage).publish_state(atof(tokens[i].c_str())); break;
+                        case 16: id(input_current).publish_state(atof(tokens[i].c_str())); break;
+                        case 17: id(power_now).publish_state(atof(tokens[i].c_str())); break;
+                        case 18: id(energy_today).publish_state(atof(tokens[i].c_str())); break;
+                        case 19: id(energy_total).publish_state(atof(tokens[i].c_str())); break;
+                        case 20: id(grid_energy_today).publish_state(atof(tokens[i].c_str())); break;
+                        case 21: id(grid_energy_total).publish_state(atof(tokens[i].c_str())); break;
+                        case 22: id(unknown_22).publish_state(atof(tokens[i].c_str())); break;
+                        case 23: id(unknown_23).publish_state(atof(tokens[i].c_str())); break;
+                        case 24: id(unknown_24).publish_state(atof(tokens[i].c_str())); break;
+                        case 25: id(runtime_today).publish_state(atof(tokens[i].c_str())); break;
+                        case 26: id(grid_charge_start).publish_state(atof(tokens[i].c_str())); break;
+                        case 27: id(lower_position).publish_state(atof(tokens[i].c_str())); break;
+                        case 28: id(serial_number).publish_state(atof(tokens[i].c_str())); break;
+                        case 29: id(unknown_29).publish_state(atof(tokens[i].c_str())); break;
+                        case 30: id(unknown_30).publish_state(atof(tokens[i].c_str())); break;
                         // case 31: id(Token_31).publish_state(atof(tokens[i].c_str())); break;
                     }
                 }
