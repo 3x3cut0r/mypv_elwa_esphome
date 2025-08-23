@@ -1,70 +1,70 @@
 # MY PV ELWA ESPHome Adapter
 
-ESPHome configuration file to setup a IR Hichi uart adapter to read data from MY PV ELWA IR interface  
-[Link to discussion](https://community.home-assistant.io/t/elwa-dc-read-uart-protocol-by-ir-hichi-with-esphome-how-to-get-into-seperate-variables/652873)
+ESPHome configuration file to setup a IR Hichi uart adapter to read data from MY PV ELWA IR interface
+[Link to discussion](https://community.home-assistant.io/t/elwa-dc-read-uart-protocol-by-ir-hichi-with-esphome-how-to-get-into-separate-variables/652873)
 
 ## Installation
 
-1. install esphome (https://esphome.io/guides/installing_esphome.html)
+1. Install ESPHome (https://esphome.io/guides/installing_esphome.html)
 
-2. clone and enter this repo
+2. Clone and enter this repo
 
 ```bash
-cd mypv_elwa_esphome
 git clone https://github.com/3x3cut0r/mypv_elwa_esphome.git
+cd mypv_elwa_esphome
 ```
 
-3. create and edit your secrets.yaml
+3. Create and edit your secrets.yaml
 
 ```bash
 mv secrets.example.yaml secrets.yaml
 ```
 
-to connect to home assistant or iobroker you need to generate either an api encryption key or enable mqtt settings in esphome.yaml
+To connect to Home Assistant or iobroker you need to generate either an API encryption key or enable MQTT settings in esphome.yaml
 
 ```bash
-# generate api encryption key
-# for windows user, use this online tool: https://www.cryptool.org/en/cto/openssl/
+# generate API encryption key
+# for Windows users, use this online tool: https://www.cryptool.org/en/cto/openssl/
 openssl rand -base64 32
 ```
 
-4. validate your configuration
+4. Validate your configuration
 
 ```bash
 esphome config esphome.yaml
 ```
 
-5. connect your ESP32 to your computer via USB
+5. Connect your ESP32 to your computer via USB
 
-6. start esphome dashboard
+6. Start ESPHome dashboard
 
 ```bash
 esphome dashboard .
 ```
 
-7. open the dashboard in a webbrowser: http://localhost:6052/
+7. Open the dashboard in a web browser: http://localhost:6052/
 
-8. click on the 3 dots of the ONLINE showing esphome.yaml box -> Install -> Plug into this computer
+8. Click on the 3 dots of the ONLINE showing esphome.yaml box -> Install -> Plug into this computer
 
-9. wait for `preparing download`
+9. Wait for `preparing download`
 
-10. click on `1. Download project` (maybe the file is marked as unsafe -> click on keep file anyway)
+10. Click on `1. Download project` (the file may be marked as unsafe -> click on keep file anyway)
 
-11. click on `2. Open ESPHome Web`
+11. Click on `2. Open ESPHome Web`
 
-12. click on `CONNECT` -> choose your ESP32 on the list
+12. Click on `CONNECT` -> choose your ESP32 on the list
 
-13. clicn on `INSTALL` -> choose your previously downloaded `firmware.factory.bin`
+13. Click on `INSTALL` -> choose your previously downloaded `firmware.factory.bin`
 
-14. while holding the `BOOT`-Button on your device, click on `INSTALL` again
+14. While holding the `BOOT` button on your device, click on `INSTALL` again
 
-15. wait for the installer to finish
+15. Wait for the installer to finish
 
-16. your ESP32 should now connect to your wifi
+16. Your ESP32 should now connect to your WiFi
 
-17. check your internet router to get the ip-address of the device (device name is `esphome-web-e45ce4`)
+17. Check your internet router to get the IP address of the device (device name is `esphome-web-e45ce4`)
 
-18. open in a webbrowser the ip, e.g.: http://192.168.178.254
+18. Open the IP in a web browser, e.g., http://192.168.178.254
 
 ## Cabling
 
