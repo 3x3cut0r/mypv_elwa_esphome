@@ -1,3 +1,4 @@
+---
 # Core Configuration
 # https://esphome.io/components/esphome.html
 esphome:
@@ -377,7 +378,7 @@ uart:
 
 # if you need to send a request periodically to get response from the uart device
 interval:
-  - interval: 20s #interval to request measurements
+  - interval: 20s  # interval to request measurements
     then:
       # request for getting all relevant token values 'rs'
       - uart.write: [0x72, 0x73, 0x0D, 0x0A]
