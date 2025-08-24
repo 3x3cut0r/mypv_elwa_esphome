@@ -369,9 +369,6 @@ uart:
                 }
             } else {
                 // Handle the case where the content of str is "rs\r\n"  =>  ElwaDC is off due to drop of PV input voltage below threshold
-                // id(Token_15).publish_state(0);  // set voltage to zero
-                // id(Token_16).publish_state(0);  // set current to zero
-                // id(Token_17).publish_state(0);  // set power to zero
             }
 
 # ----------------------CODE-TO-REQUEST-ELWA_DC-SERIAL-DATA----------------------
